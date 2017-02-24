@@ -6,7 +6,6 @@
 
 function Vehicle(x1, y1, x2, y2, x3, y3) {
   this.pos = createVector(random(width), random(height));
-  this.target = createVector(x1, y1);
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
   this.r = 8;
@@ -18,6 +17,7 @@ function Vehicle(x1, y1, x2, y2, x3, y3) {
   this.y2 = y2;
   this.x3 = x3;
   this.y3 = y3;
+  this.target = createVector((x1 + x2 + x3) / 3, (y1 + y2 + y3) / 3);
   this.color = random(200, 256);
 }
 
@@ -44,11 +44,11 @@ Vehicle.prototype.update = function() {
 }
 
 Vehicle.prototype.show = function() {
-  fill(this.color)
-  strokeWeight(0);
-  var changeX = this.pos.x - this.x1;
-  var changeY = this.pos.y - this.y1;
-  triangle(this.pos.x, this.pos.y, this.x2 + changeX, this.y2 + changeY, this.x3 + changeX, this.y3 + changeY);
+  fill(this.color);
+  noStroke();
+  var changeX = this.pos.x - (this.x1 + this.x2 + this.x3) / 3;
+  var changeY = this.pos.y - (this.y1 + this.y2 + this.y3) / 3;
+  triangle(this.x1 + changeX, this.y1 + changeY, this.x2 + changeX, this.y2 + changeY, this.x3 + changeX, this.y3 + changeY);
 }
 
 
