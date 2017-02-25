@@ -15,9 +15,6 @@ function preload() {
 function setup() {
   createCanvas(600, 300);
   background(51);
-  
-
-  console.log(table.getColumnCount());
 
   for (var r = 0; r < table.getRowCount(); r++) {
       var x1 = parseFloat(table.getString(r, 0));
