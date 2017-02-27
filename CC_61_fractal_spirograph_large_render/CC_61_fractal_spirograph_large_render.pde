@@ -9,6 +9,7 @@ PGraphics pg;
 int resolution = 2048;
 int weight = 1;
 int size = 10000;
+int circles = 63;
 
 Orbit sun;
 Orbit end;
@@ -19,7 +20,7 @@ void setup() {
   path = new ArrayList<PVector>();
   sun = new Orbit(pg.width/2, pg.height/2, pg.width/4, 0);
   Orbit next = sun;
-  for (int i = 0; i < 63; i++) {
+  for (int i = 0; i < circles; i++) {
     next = next.addChild();
   }
   end = next;
@@ -29,8 +30,8 @@ void draw() {
   background(51);
   if(sun.child.angle >= HALF_PI * 3) {
     pg.beginDraw();
-    pg.background(51);
-    pg.stroke(255, 0, 255);
+    pg.background(255);
+    pg.stroke(0);
     pg.strokeWeight(weight);
     pg.noFill();
     pg.beginShape();
