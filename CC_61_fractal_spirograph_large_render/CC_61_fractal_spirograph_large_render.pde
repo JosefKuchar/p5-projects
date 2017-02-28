@@ -40,7 +40,7 @@ void draw() {
     }
     pg.endShape();
     pg.endDraw();
-    pg.save("render.png");
+    pg.save("render/render.png");
     noLoop();
   }
 
