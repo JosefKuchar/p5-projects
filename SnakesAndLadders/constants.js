@@ -1,0 +1,6 @@
+var WIDTH = 10;
+var HEIGHT = 10;
+var TEXT_SIZE = 32;
+var INTERPOLATION_SPEED = 1 / 15;
+var TURN_DELAY = 15;
+var CONCURRENT_PLAYERS = 3;
